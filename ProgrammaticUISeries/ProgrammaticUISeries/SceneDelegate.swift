@@ -18,9 +18,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         window.makeKeyAndVisible()
         window.overrideUserInterfaceStyle = .light
-        window.rootViewController = HomepageVC()
+        window.rootViewController = UINavigationController(rootViewController: HomepageVC())
         self.window = window
-
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

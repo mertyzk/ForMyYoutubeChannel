@@ -35,6 +35,7 @@ class HomepageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        addTargets()
     }
     
     
@@ -48,6 +49,17 @@ class HomepageVC: UIViewController {
         configureWithExtension()
     }
     
+    
+    func addTargets() {
+        loginButton.addTarget(self, action: #selector(loginButtonClicked), for: .touchUpInside)
+    }
+    
+    
+    //MARK: - @Actions
+    @objc func loginButtonClicked() {
+        navigationController?.pushViewController(DetailsVC(), animated: true)
+    }
+
     
     func configureWithExtension() {
         view.addSubviewsFromExt(userNameTextField, passwordTextField, loginButton)
