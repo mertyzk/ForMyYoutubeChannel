@@ -30,12 +30,23 @@ class HomepageVC: UIViewController {
         return stackView
     }()
     
+    override func loadView() {
+        super.loadView()
+        print("xxxxxxxxxxx DEBUG: LOADVIEW ÖNCE ÇALIŞIR")
+    }
+    
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("xxxxxxxxxxx DEBUG: 2. SIRADA VİEWDİDLOAD ÇALIŞIR")
         setupUI()
         addTargets()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("xxxxxxxxxxx DEBUG: 3. SIRADA VİEWWİLLAPPEAR ÇALIŞIR")
     }
     
     
